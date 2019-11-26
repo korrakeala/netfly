@@ -1,0 +1,321 @@
+{
+	"info": {
+		"_postman_id": "e45e4e4f-6886-406f-aa08-c52b0e3a6505",
+		"name": "Netfly",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\t{\n\t\t\"fullName\":\"Maca\",\n    \t\"email\":\"escalante.macarenae@gmail.com\",\n\t\t\"password\":\"123456\"\n\t}\n\t"
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\t{\n    \t\"username\":\"escalante.macarenae@gmail.com\",\n\t\t\"password\":\"123456\"\n\t}"
+				},
+				"url": {
+					"raw": "https://immense-stream-19215.herokuapp.com/auth/login",
+					"protocol": "https",
+					"host": [
+						"immense-stream-19215",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postSerie",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlc2NhbGFudGUubWFjYXJlbmFlQGdtYWlsLmNvbSIsImV4cCI6MTU3Mjk3NzA1NywiaWF0IjoxNTcyOTU5MDU3fQ.yt-nQXi0d7rDzm7FWCrqpUZSDZf0st-yN9IrC-jN3g3vkY0N5J4Kz3x7UlzLsj7othPVhLIKUfa9BXvozQAepg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Breaking Bad\",\n    \"genero\": \"drama\",\n    \"anio\": 2008,\n    \"temporadas\": [\n        {\n            \"nroTemporada\": 1,\n            \"episodios\": [\n                {\n                    \"nroEpisodio\": 1,\n                    \"titulo\": \"Pilot\",\n                    \"duracion\": 55\n                }\n            ]\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/series",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"series"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postTemporada",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlc2NhbGFudGUubWFjYXJlbmFlQGdtYWlsLmNvbSIsImV4cCI6MTU3Mjk3NzA1NywiaWF0IjoxNTcyOTU5MDU3fQ.yt-nQXi0d7rDzm7FWCrqpUZSDZf0st-yN9IrC-jN3g3vkY0N5J4Kz3x7UlzLsj7othPVhLIKUfa9BXvozQAepg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nroTemporada\": 2\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/series/5dc186d1c4d0135c2ea68ec0/temporadas/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"series",
+						"5dc186d1c4d0135c2ea68ec0",
+						"temporadas",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postEpisodio",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlc2NhbGFudGUubWFjYXJlbmFlQGdtYWlsLmNvbSIsImV4cCI6MTU3Mjk3NzA1NywiaWF0IjoxNTcyOTU5MDU3fQ.yt-nQXi0d7rDzm7FWCrqpUZSDZf0st-yN9IrC-jN3g3vkY0N5J4Kz3x7UlzLsj7othPVhLIKUfa9BXvozQAepg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nroEpisodio\": 4,\n    \"titulo\": \"Down\",\n    \"duracionMin\": 54\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/series/5dc186d1c4d0135c2ea68ec0/temporadas/2/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"series",
+						"5dc186d1c4d0135c2ea68ec0",
+						"temporadas",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postPeli",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlc2NhbGFudGUubWFjYXJlbmFlQGdtYWlsLmNvbSIsImV4cCI6MTU3NDI3OTA0NSwiaWF0IjoxNTc0MjYxMDQ1fQ.uXGlVRoqMW5hVL0-ZSZxBdQ2raOH9hgMHUN2WjE1BPxTTjRdwq-bfhwACDYY5LCn7lREnM1CH_3PLv_8iA3MXw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Her\",\n    \"genero\": \"Drama, Sci-Fi\",\n    \"anio\": 2014,\n    \"ganoOscar\": true,\n    \"duracionMin\": 126\n}"
+				},
+				"url": {
+					"raw": "https://immense-stream-19215.herokuapp.com/pelis",
+					"protocol": "https",
+					"host": [
+						"immense-stream-19215",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"pelis"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "putEpisodio",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlc2NhbGFudGUubWFjYXJlbmFlQGdtYWlsLmNvbSIsImV4cCI6MTU3Mjk3NzA1NywiaWF0IjoxNTcyOTU5MDU3fQ.yt-nQXi0d7rDzm7FWCrqpUZSDZf0st-yN9IrC-jN3g3vkY0N5J4Kz3x7UlzLsj7othPVhLIKUfa9BXvozQAepg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nroEpisodio\": 4,\n    \"titulo\": \"Down.\",\n    \"duracionMin\": 45\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/series/5dc186d1c4d0135c2ea68ec0/temporadas/2/episodios/4/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"series",
+						"5dc186d1c4d0135c2ea68ec0",
+						"temporadas",
+						"2",
+						"episodios",
+						"4",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "putPeli",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlc2NhbGFudGUubWFjYXJlbmFlQGdtYWlsLmNvbSIsImV4cCI6MTU3Mjk3NzA1NywiaWF0IjoxNTcyOTU5MDU3fQ.yt-nQXi0d7rDzm7FWCrqpUZSDZf0st-yN9IrC-jN3g3vkY0N5J4Kz3x7UlzLsj7othPVhLIKUfa9BXvozQAepg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Roma\",\n    \"genero\": \"drama\",\n    \"anio\": 2017,\n    \"ganoOscar\": true,\n    \"duracionMin\": 130\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/pelis/5dc18f1f95210a06dcfb7bee/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pelis",
+						"5dc18f1f95210a06dcfb7bee",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
